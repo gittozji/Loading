@@ -62,6 +62,8 @@
 			border-top: 5px solid transparent;
 			transform: rotate(-310deg);
 			animation: animation-circle-right 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+			-webkit-animation: animation-circle-right 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+			
 		}
 		/*左圈动画*/
 		@keyframes animation-circle-left{
@@ -75,8 +77,30 @@
 				transform: rotate(40deg);
 			}
 		}
+		@-webkit-keyframes animation-circle-left{
+			0%{
+				transform: rotate(40deg);
+			}
+			50%{
+				transform: rotate(-100deg);
+			}
+			100%{
+				transform: rotate(40deg);
+			}
+		}
 		/*右圈动画*/
 		@keyframes animation-circle-right{
+			0%{
+				transform: rotate(-310deg);
+			}
+			50%{
+				transform: rotate(-170deg);
+			}
+			100%{
+				transform: rotate(-310deg);
+			}
+		}
+		@-webkit-keyframes animation-circle-right{
 			0%{
 				transform: rotate(-310deg);
 			}
@@ -105,8 +129,33 @@
 				transform: rotate(720deg);
 			}
 		}
+		@-webkit-keyframes animation-circle{
+			0%{
+				transform: rotate(0deg);
+			}
+			25%{
+				transform: rotate(180deg);
+			}
+			50%{
+				transform: rotate(360deg);
+			}
+			75%{
+				transform: rotate(540deg);
+			}
+			100%{
+				transform: rotate(720deg);
+			}
+		}
 		/*最外层动画*/
 		@keyframes animation-wrap{
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+		@-webkit-keyframes animation-wrap{
 			0%{
 				transform: rotate(0deg);
 			}
