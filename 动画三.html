@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<mate charset="utf-8"></mate>
+	<title>Material Design Loading Animation</title>
+	<style>
+	body{
+		margin: 100px 200px;
+	}
+		/*最外层布局*/
+		.wrap{
+			width: 110px;
+			height: 110px;
+			animation: animation-wrap 2.5s linear infinite;
+		}
+		/*外层布局*/
+		.circle-layout{
+			width: 110px;
+			height: 110px;
+			animation: animation-circle 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+		}
+		/*左div*/
+		.layout-left{
+			float: left;
+			width: 50%;
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		/*右div*/
+		.layout-right{
+			float: right;
+			width: 50%;
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		/*左圈*/
+		.circle-left{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			border: 5px solid #F88E8B;
+			border-radius: 50%;
+			border-left: 5px solid transparent;
+			border-bottom: 5px solid transparent;
+			transform: rotate(40deg);
+			animation: animation-circle-left 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+		}
+		/*右圈*/
+		.circle-right{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100px;
+			height: 100px;
+			border: 5px solid #F88E8B;
+			border-radius: 50%;
+			border-right: 5px solid transparent;
+			border-top: 5px solid transparent;
+			transform: rotate(-310deg);
+			animation: animation-circle-right 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+		}
+		/*左圈动画*/
+		@keyframes animation-circle-left{
+			0%{
+				transform: rotate(40deg);
+			}
+			50%{
+				transform: rotate(-100deg);
+			}
+			100%{
+				transform: rotate(40deg);
+			}
+		}
+		/*右圈动画*/
+		@keyframes animation-circle-right{
+			0%{
+				transform: rotate(-310deg);
+			}
+			50%{
+				transform: rotate(-170deg);
+			}
+			100%{
+				transform: rotate(-310deg);
+			}
+		}
+		/*外层动画*/
+		@keyframes animation-circle{
+			0%{
+				transform: rotate(0deg);
+			}
+			25%{
+				transform: rotate(180deg);
+			}
+			50%{
+				transform: rotate(360deg);
+			}
+			75%{
+				transform: rotate(540deg);
+			}
+			100%{
+				transform: rotate(720deg);
+			}
+		}
+		/*最外层动画*/
+		@keyframes animation-wrap{
+			0%{
+				transform: rotate(0deg);
+			}
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="circle-layout">
+			<div class="layout-left">
+				<div class="circle-left"></div>
+			</div>
+			<div class="layout-right">
+				<div class="circle-right"></div>
+			</div>
+		<div>
+	</div>
+</body>
+</html>
